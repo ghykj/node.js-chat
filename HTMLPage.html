@@ -17,6 +17,7 @@
         output += '</li>';
 
         $(output).prependTo('#content');
+        $('#content').listview('refresh');
       });
 
       $('button').click(function () {
@@ -30,14 +31,27 @@
   </script>
 </head>
 <body>
-  <h1>나정톡</h1>
-  <p>with Node.js</p>
-  <hr/>
-  <input id="name"/>
-  <input id="message"/>
-  <button>Button</button>
-  <ul id="content">
-
-  </ul>
+  <div data-role="page">
+    <div data-role="header">
+      <h1>나정톡</h1>
+      <p>with Node.js</p>
+    </div>
+    <div data-role="content">
+      <h3>Name</h3>
+      <input id="name"/>
+      <a data-role="button" href="#chatpage">Start Chat</a>
+    </div>
+  </div>
+  <div data-role="page" id="chatpage">
+    <div data-role="header">
+      <h1>나정톡</h1>
+    </div>
+    <div data-role="content">
+      <input id="message" />
+      <button>보내기</button>
+      <ul id="content" data-role="listview" data-inset="true">
+      </u1>
+    </div>
+  </div>
 </body>
 </html>
