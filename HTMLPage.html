@@ -27,8 +27,9 @@
         socket.emit('message', {
           name: $('#name').val(),
           message: $('#message').val(),
-          date: new Date().toUTCString()
+          date: Date()
         });
+        $('#message').val("");
       });
     });
   </script>
